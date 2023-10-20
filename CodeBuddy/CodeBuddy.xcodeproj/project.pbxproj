@@ -10,6 +10,7 @@
 		040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040954C72AE31C6E0045DC6F /* HomeView.swift */; };
 		040954CA2AE31D310045DC6F /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040954C92AE31D310045DC6F /* SideBarView.swift */; };
 		040954CC2AE31D4A0045DC6F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040954CB2AE31D4A0045DC6F /* MapView.swift */; };
+		040954CF2AE320150045DC6F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040954CE2AE320150045DC6F /* Map.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		040954C72AE31C6E0045DC6F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		040954C92AE31D310045DC6F /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		040954CB2AE31D4A0045DC6F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		040954CE2AE320150045DC6F /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		040954CD2AE320000045DC6F /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				040954CE2AE320150045DC6F /* Map.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		045EDCBB2ADB2C6200E1FF1F = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		045EDCC62ADB2C6200E1FF1F /* CodeBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				040954CD2AE320000045DC6F /* Maps */,
 				040954C62AE31C280045DC6F /* Screens */,
 				045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */,
 				045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */,
@@ -153,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040954CF2AE320150045DC6F /* Map.swift in Sources */,
 				040954CA2AE31D310045DC6F /* SideBarView.swift in Sources */,
 				040954CC2AE31D4A0045DC6F /* MapView.swift in Sources */,
 				040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */,
