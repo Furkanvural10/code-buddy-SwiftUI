@@ -11,7 +11,8 @@ import SwiftUI
 struct CodeBuddyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .frame(minWidth: 1280 ,minHeight: 720)
         }
     }
 }
