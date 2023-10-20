@@ -15,11 +15,16 @@ struct Map: NSViewRepresentable {
     func makeNSView(context: Context) -> MKMapView {
         let map = MKMapView()
         map.showsUserLocation = true
+        map.delegate = context.coordinator
         return map
     }
     
     func updateNSView(_ nsView: MKMapView, context: Context) {
         
+    }
+    
+    func makeCoordinator() -> MapViewCoordinator {
+        MapViewCoordinator()
     }
     
     
