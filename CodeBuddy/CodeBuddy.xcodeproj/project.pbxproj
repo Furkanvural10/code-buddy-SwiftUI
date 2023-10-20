@@ -33,6 +33,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040954C62AE31C280045DC6F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		045EDCBB2ADB2C6200E1FF1F = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +59,7 @@
 		045EDCC62ADB2C6200E1FF1F /* CodeBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				040954C62AE31C280045DC6F /* Screens */,
 				045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */,
 				045EDCC92ADB2C6200E1FF1F /* ContentView.swift */,
 				045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */,
