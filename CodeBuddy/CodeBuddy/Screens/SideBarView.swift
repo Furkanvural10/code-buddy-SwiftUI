@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SideBarView: View {
     var body: some View {
-        Text("Side Bar")
+        UserListView()
     }
 }
 

@@ -13,6 +13,8 @@
 		040954CF2AE320150045DC6F /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040954CE2AE320150045DC6F /* Map.swift */; };
 		040954D22AE327930045DC6F /* MapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040954D12AE327930045DC6F /* MapViewCoordinator.swift */; };
 		040955082AE45E920045DC6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040955072AE45E920045DC6F /* LocationManager.swift */; };
+		0409550B2AE472470045DC6F /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409550A2AE472470045DC6F /* UserListView.swift */; };
+		0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409550C2AE472C80045DC6F /* UserLabelView.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		040954CE2AE320150045DC6F /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		040954D12AE327930045DC6F /* MapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCoordinator.swift; sourceTree = "<group>"; };
 		040955072AE45E920045DC6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0409550A2AE472470045DC6F /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		0409550C2AE472C80045DC6F /* UserLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLabelView.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +81,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		040955092AE472350045DC6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0409550A2AE472470045DC6F /* UserListView.swift */,
+				0409550C2AE472C80045DC6F /* UserLabelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		045EDCBB2ADB2C6200E1FF1F = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +109,7 @@
 		045EDCC62ADB2C6200E1FF1F /* CodeBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				040955092AE472350045DC6F /* Views */,
 				040955062AE45E820045DC6F /* Managers */,
 				040954D02AE3277A0045DC6F /* Coordinator */,
 				040954CD2AE320000045DC6F /* Maps */,
@@ -189,7 +203,9 @@
 				040954CF2AE320150045DC6F /* Map.swift in Sources */,
 				040954CA2AE31D310045DC6F /* SideBarView.swift in Sources */,
 				040954CC2AE31D4A0045DC6F /* MapView.swift in Sources */,
+				0409550B2AE472470045DC6F /* UserListView.swift in Sources */,
 				040955082AE45E920045DC6F /* LocationManager.swift in Sources */,
+				0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */,
 				040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */,
 				040954D22AE327930045DC6F /* MapViewCoordinator.swift in Sources */,
 				045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */,

@@ -11,7 +11,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             SideBarView()
-                .frame(minWidth: 200)
+                .frame(minWidth: 220)
             MapView()
         }
     }
