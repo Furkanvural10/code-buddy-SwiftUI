@@ -20,11 +20,11 @@ struct UserLabelView: View {
             
             Rectangle()
                 .fill(Color.gray.opacity(0.2))
-                .frame(width: 235, height: 50)
+                .frame(width: 245, height: 50)
                 .clipShape(RoundedRectangle(cornerRadius: 55))
                 .padding(.all, 4)
             
-            HStack {
+            HStack() {
                 
                 Circle()
                     .fill(Color.white)
@@ -41,6 +41,29 @@ struct UserLabelView: View {
                         .font(.system(size: 11))
                 }
                 .padding(.leading, 4)
+                ZStack {
+                    
+                    Rectangle()
+                        .fill(Color.red.opacity(0.7))
+                        .frame(width: 75, height: 20)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding([.leading, .top], 10)
+                    Text("Status")
+                        .font(.system(size: 9))
+                        .foregroundColor(.white.opacity(0.7))
+                        .padding(.bottom, 30)
+                        
+                    
+                    Text("Collaboration")
+                        .foregroundColor(Color.white)
+                        .font(.caption)
+                        .padding([.leading, .top], 11)
+                    
+                    
+                        
+                        
+                }
+                
                 
                 
             }
@@ -56,3 +79,11 @@ struct UserLabelView_Previews: PreviewProvider {
         UserLabelView()
     }
 }
+
+
+/*
+ MARK: Status
+ 1- Collaboration (Work with Me)
+ 2- Networking
+ 3- Deep Work
+ */
