@@ -15,6 +15,8 @@
 		040955082AE45E920045DC6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040955072AE45E920045DC6F /* LocationManager.swift */; };
 		0409550B2AE472470045DC6F /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409550A2AE472470045DC6F /* UserListView.swift */; };
 		0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409550C2AE472C80045DC6F /* UserLabelView.swift */; };
+		044705342AE712FB00AEE163 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705332AE712FB00AEE163 /* UserImageView.swift */; };
+		044705362AE713AE00AEE163 /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705352AE713AE00AEE163 /* TitleSubtitleView.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		040955072AE45E920045DC6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0409550A2AE472470045DC6F /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		0409550C2AE472C80045DC6F /* UserLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLabelView.swift; sourceTree = "<group>"; };
+		044705332AE712FB00AEE163 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
+		044705352AE713AE00AEE163 /* TitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleView.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,10 +88,52 @@
 		040955092AE472350045DC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0409550A2AE472470045DC6F /* UserListView.swift */,
-				0409550C2AE472C80045DC6F /* UserLabelView.swift */,
+				0447052F2AE7105000AEE163 /* UserLabelView */,
+				0447052E2AE7104400AEE163 /* UserListView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0447052E2AE7104400AEE163 /* UserListView */ = {
+			isa = PBXGroup;
+			children = (
+				0409550A2AE472470045DC6F /* UserListView.swift */,
+			);
+			path = UserListView;
+			sourceTree = "<group>";
+		};
+		0447052F2AE7105000AEE163 /* UserLabelView */ = {
+			isa = PBXGroup;
+			children = (
+				044705322AE710D500AEE163 /* StatusIcons */,
+				044705312AE710C900AEE163 /* TitleSubtitle */,
+				044705302AE7109A00AEE163 /* UserImage */,
+				0409550C2AE472C80045DC6F /* UserLabelView.swift */,
+			);
+			path = UserLabelView;
+			sourceTree = "<group>";
+		};
+		044705302AE7109A00AEE163 /* UserImage */ = {
+			isa = PBXGroup;
+			children = (
+				044705332AE712FB00AEE163 /* UserImageView.swift */,
+			);
+			path = UserImage;
+			sourceTree = "<group>";
+		};
+		044705312AE710C900AEE163 /* TitleSubtitle */ = {
+			isa = PBXGroup;
+			children = (
+				044705352AE713AE00AEE163 /* TitleSubtitleView.swift */,
+			);
+			path = TitleSubtitle;
+			sourceTree = "<group>";
+		};
+		044705322AE710D500AEE163 /* StatusIcons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatusIcons;
 			sourceTree = "<group>";
 		};
 		045EDCBB2ADB2C6200E1FF1F = {
@@ -209,6 +255,8 @@
 				040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */,
 				040954D22AE327930045DC6F /* MapViewCoordinator.swift in Sources */,
 				045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */,
+				044705362AE713AE00AEE163 /* TitleSubtitleView.swift in Sources */,
+				044705342AE712FB00AEE163 /* UserImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
