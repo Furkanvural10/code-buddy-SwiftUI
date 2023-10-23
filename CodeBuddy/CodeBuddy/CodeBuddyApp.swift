@@ -12,6 +12,7 @@ struct CodeBuddyApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(Settings())
                 .frame(minWidth: 1280 ,minHeight: 720)
         }
     }

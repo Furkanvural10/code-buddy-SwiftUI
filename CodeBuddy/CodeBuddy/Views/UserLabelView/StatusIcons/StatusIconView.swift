@@ -7,15 +7,22 @@
 
 import SwiftUI
 
+class Settings: ObservableObject {
+    
+    @Published var isActive: Bool = false
+}
+
 struct StatusIconView: View {
+    
+    @EnvironmentObject var value: Settings
     
     var body: some View {
         HStack {
             CollaborationIconView()
             NetworkingIconView()
-            BussyIconView()
+            BusyIconView()
         }
-        .padding(.leading, 5)
+        .padding(.leading, 10)
     }
 }
 

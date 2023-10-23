@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct CollaborationIconView: View {
+    
+    
+    
+    
     var body: some View {
         Image(systemName: "keyboard.chevron.compact.left.fill")
-                    .foregroundColor(Color.green)
-            .font(.system(size: 8))
+            .foregroundColor(.gray.opacity(0.3))
+                    .font(.system(size: 9))
     }
 }
 

@@ -7,7 +7,7 @@ struct UserLabelView: View {
         ZStack(alignment: .leading) {
             
             Rectangle()
-                .fill(Color.gray.opacity(0.2))
+                .fill(Color.gray.opacity(0.05))
                 .frame(width: 245, height: 50)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.all, 4)
