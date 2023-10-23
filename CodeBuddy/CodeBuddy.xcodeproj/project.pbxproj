@@ -17,6 +17,7 @@
 		0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409550C2AE472C80045DC6F /* UserLabelView.swift */; };
 		044705342AE712FB00AEE163 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705332AE712FB00AEE163 /* UserImageView.swift */; };
 		044705362AE713AE00AEE163 /* TitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705352AE713AE00AEE163 /* TitleSubtitleView.swift */; };
+		044705382AE714CE00AEE163 /* StatusIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705372AE714CE00AEE163 /* StatusIconView.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		0409550C2AE472C80045DC6F /* UserLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLabelView.swift; sourceTree = "<group>"; };
 		044705332AE712FB00AEE163 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 		044705352AE713AE00AEE163 /* TitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleView.swift; sourceTree = "<group>"; };
+		044705372AE714CE00AEE163 /* StatusIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIconView.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		044705322AE710D500AEE163 /* StatusIcons */ = {
 			isa = PBXGroup;
 			children = (
+				044705372AE714CE00AEE163 /* StatusIconView.swift */,
 			);
 			path = StatusIcons;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				040954CF2AE320150045DC6F /* Map.swift in Sources */,
 				040954CA2AE31D310045DC6F /* SideBarView.swift in Sources */,
 				040954CC2AE31D4A0045DC6F /* MapView.swift in Sources */,
+				044705382AE714CE00AEE163 /* StatusIconView.swift in Sources */,
 				0409550B2AE472470045DC6F /* UserListView.swift in Sources */,
 				040955082AE45E920045DC6F /* LocationManager.swift in Sources */,
 				0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */,
