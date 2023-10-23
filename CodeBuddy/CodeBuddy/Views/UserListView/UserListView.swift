@@ -10,12 +10,38 @@ import SwiftUI
 struct UserListView: View {
     @State private var search: String = ""
     var body: some View {
+//        VStack(alignment: .leading) {
+//            List(1...20, id: \.self) { index in
+//                UserLabelView()
+//            }
+//        }.searchable(text: $search, placement: .sidebar, prompt: "Search People")
+//            .padding([.top, .bottom,], 15)
+        
         VStack(alignment: .leading) {
+            HStack {
+                // Arama kutusu
+                TextField("Search People", text: $search)
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.leading, 10)
+                Spacer()
+                Button(action: {
+                    // Filtreleme butonuna tıklanınca yapılacak işlemler
+                }) {
+                    Image(systemName: "list.bullet")
+                        .font(.system(size: 20))
+                        .padding(.trailing, 5)
+                }
+                .buttonStyle(.plain)
+            }
+
             List(1...20, id: \.self) { index in
                 UserLabelView()
             }
-        }.searchable(text: $search, placement: .sidebar, prompt: "Search People")
-            .padding([.top, .bottom,], 15)
+        }
+        .padding([.top, .bottom], 15)
+            
+        
+        
     }
 }
 

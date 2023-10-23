@@ -21,7 +21,6 @@
 		0447053B2AE716AA00AEE163 /* CollaborationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447053A2AE716AA00AEE163 /* CollaborationIconView.swift */; };
 		0447053E2AE716EC00AEE163 /* NetworkingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447053D2AE716EC00AEE163 /* NetworkingIconView.swift */; };
 		044705412AE7172600AEE163 /* BussyIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705402AE7172600AEE163 /* BussyIconView.swift */; };
-		044705442AE720F900AEE163 /* profileImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 044705432AE720F900AEE163 /* profileImage.jpg */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -42,7 +41,6 @@
 		0447053A2AE716AA00AEE163 /* CollaborationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationIconView.swift; sourceTree = "<group>"; };
 		0447053D2AE716EC00AEE163 /* NetworkingIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingIconView.swift; sourceTree = "<group>"; };
 		044705402AE7172600AEE163 /* BussyIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BussyIconView.swift; sourceTree = "<group>"; };
-		044705432AE720F900AEE163 /* profileImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profileImage.jpg; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				040954C62AE31C280045DC6F /* Screens */,
 				045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */,
 				045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */,
-				044705432AE720F900AEE163 /* profileImage.jpg */,
 				045EDCD02ADB2C6300E1FF1F /* CodeBuddy.entitlements */,
 				045EDCCD2ADB2C6300E1FF1F /* Preview Content */,
 			);
@@ -282,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */,
-				044705442AE720F900AEE163 /* profileImage.jpg in Resources */,
 				045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

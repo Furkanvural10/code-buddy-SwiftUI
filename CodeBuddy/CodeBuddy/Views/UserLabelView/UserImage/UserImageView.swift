@@ -9,11 +9,18 @@ import SwiftUI
 
 struct UserImageView: View {
     var body: some View {
-        Circle()
-            .fill(Color.white)
+        Image("profileImage")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
             .frame(width: 35, height: 35)
+            
+            .clipShape(Circle())
             .padding(.leading, 15)
+        
+        
     }
+    
+        
 }
 
 struct UserImageView_Previews: PreviewProvider {

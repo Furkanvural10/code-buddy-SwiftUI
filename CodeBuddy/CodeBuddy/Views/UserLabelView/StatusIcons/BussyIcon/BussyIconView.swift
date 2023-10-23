@@ -17,8 +17,9 @@ struct BusyIconView: View {
         // According to selected status make bigger status and change color icon
         
         Image(systemName: "minus.circle.fill")
-            .foregroundColor(Color.red)
-            .font(.system(size: 25))
+            .foregroundColor(Color.gray.opacity(0.4))
+            .font(.system(size: 9))
+            .padding(.trailing, 2)
            
     }
 }
