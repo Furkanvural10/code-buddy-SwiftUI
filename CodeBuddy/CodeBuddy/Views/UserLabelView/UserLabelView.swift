@@ -1,23 +1,7 @@
-//
-//  UserLabelView.swift
-//  CodeBuddy
-//
-//  Created by furkan vural on 21.10.2023.
-//
-
-/* To-Do List
- 1- Do not forget add shadowing to view
- 2- Add software language symbol
- 3-
- */
-
 
 import SwiftUI
 
 struct UserLabelView: View {
-    
-    
-    
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -31,16 +15,9 @@ struct UserLabelView: View {
             HStack() {
                 UserImageView()
                 TitleSubtitleView()
-                
-               StatusIconView()
-                
-                
-                
+                StatusIconView()
             }
-            
-            
         }
-        
     }
 }
 
@@ -51,9 +28,3 @@ struct UserLabelView_Previews: PreviewProvider {
 }
 
 
-/*
- MARK: Status
- 1- Collaboration (Work with Me)
- 2- Networking
- 3- Busy
- */
