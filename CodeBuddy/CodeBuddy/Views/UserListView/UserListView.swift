@@ -9,14 +9,10 @@ import SwiftUI
 
 struct UserListView: View {
     @State private var search: String = ""
+    @State private var isFilterViewPresented = false
+
+    
     var body: some View {
-//        VStack(alignment: .leading) {
-//            List(1...20, id: \.self) { index in
-//                UserLabelView()
-//            }
-//        }.searchable(text: $search, placement: .sidebar, prompt: "Search People")
-//            .padding([.top, .bottom,], 15)
-        
         VStack(alignment: .leading) {
             HStack {
                 // Arama kutusu
@@ -26,12 +22,19 @@ struct UserListView: View {
                 Spacer()
                 Button(action: {
                     // Filtreleme butonuna tıklanınca yapılacak işlemler
+                    isFilterViewPresented.toggle()
                 }) {
                     Image(systemName: "list.bullet")
                         .font(.system(size: 20))
                         .padding(.trailing, 5)
                 }
                 .buttonStyle(.plain)
+                .sheet(isPresented: $isFilterViewPresented) {
+                    UserFilterView(isPresented: $isFilterViewPresented)
+                        
+                        
+
+                }
             }
 
             List(1...20, id: \.self) { index in

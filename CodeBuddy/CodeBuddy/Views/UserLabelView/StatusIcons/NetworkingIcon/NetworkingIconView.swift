@@ -12,7 +12,7 @@ struct NetworkingIconView: View {
         Image(systemName: "cup.and.saucer.fill")
 //            .foregroundColor(.gray.opacity(0.3))
             .foregroundColor(Color.brown)
-            .font(.system(size: 20))
+            .font(.system(size: 9))
     }
 }
 

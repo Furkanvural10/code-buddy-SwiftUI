@@ -21,6 +21,9 @@
 		0447053B2AE716AA00AEE163 /* CollaborationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447053A2AE716AA00AEE163 /* CollaborationIconView.swift */; };
 		0447053E2AE716EC00AEE163 /* NetworkingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447053D2AE716EC00AEE163 /* NetworkingIconView.swift */; };
 		044705412AE7172600AEE163 /* BussyIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705402AE7172600AEE163 /* BussyIconView.swift */; };
+		044705672AE86BBB00AEE163 /* UserFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705662AE86BBB00AEE163 /* UserFilterView.swift */; };
+		044705692AE91FBD00AEE163 /* ProgrammingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705682AE91FBD00AEE163 /* ProgrammingLanguage.swift */; };
+		0447056B2AE92CA900AEE163 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447056A2AE92CA900AEE163 /* UserStatus.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -41,6 +44,9 @@
 		0447053A2AE716AA00AEE163 /* CollaborationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationIconView.swift; sourceTree = "<group>"; };
 		0447053D2AE716EC00AEE163 /* NetworkingIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingIconView.swift; sourceTree = "<group>"; };
 		044705402AE7172600AEE163 /* BussyIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BussyIconView.swift; sourceTree = "<group>"; };
+		044705662AE86BBB00AEE163 /* UserFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterView.swift; sourceTree = "<group>"; };
+		044705682AE91FBD00AEE163 /* ProgrammingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguage.swift; sourceTree = "<group>"; };
+		0447056A2AE92CA900AEE163 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 		040955092AE472350045DC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				044705652AE86BA300AEE163 /* FilterView */,
 				0447052F2AE7105000AEE163 /* UserLabelView */,
 				0447052E2AE7104400AEE163 /* UserListView */,
 			);
@@ -175,8 +182,18 @@
 		044705422AE7197000AEE163 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				044705682AE91FBD00AEE163 /* ProgrammingLanguage.swift */,
+				0447056A2AE92CA900AEE163 /* UserStatus.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		044705652AE86BA300AEE163 /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				044705662AE86BBB00AEE163 /* UserFilterView.swift */,
+			);
+			path = FilterView;
 			sourceTree = "<group>";
 		};
 		045EDCBB2ADB2C6200E1FF1F = {
@@ -294,6 +311,7 @@
 				0447053E2AE716EC00AEE163 /* NetworkingIconView.swift in Sources */,
 				044705412AE7172600AEE163 /* BussyIconView.swift in Sources */,
 				040954CA2AE31D310045DC6F /* SideBarView.swift in Sources */,
+				0447056B2AE92CA900AEE163 /* UserStatus.swift in Sources */,
 				040954CC2AE31D4A0045DC6F /* MapView.swift in Sources */,
 				044705382AE714CE00AEE163 /* StatusIconView.swift in Sources */,
 				0409550B2AE472470045DC6F /* UserListView.swift in Sources */,
@@ -302,9 +320,11 @@
 				040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */,
 				040954D22AE327930045DC6F /* MapViewCoordinator.swift in Sources */,
 				0447053B2AE716AA00AEE163 /* CollaborationIconView.swift in Sources */,
+				044705692AE91FBD00AEE163 /* ProgrammingLanguage.swift in Sources */,
 				045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */,
 				044705362AE713AE00AEE163 /* TitleSubtitleView.swift in Sources */,
 				044705342AE712FB00AEE163 /* UserImageView.swift in Sources */,
+				044705672AE86BBB00AEE163 /* UserFilterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
