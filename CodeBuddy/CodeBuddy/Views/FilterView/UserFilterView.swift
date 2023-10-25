@@ -43,6 +43,22 @@ struct UserFilterView: View {
                     
                 }
             }
+            Divider()
+                .foregroundColor(Color.black.opacity(0))
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Status")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding([.leading, .top], 5)
+                Divider()
+                
+                HStack {
+                    ForEach(statusList, id: \.self) { status in
+                        Toggle(status, isOn: $statusIsOn)
+                        
+                    }
+                }
+            }
             
             
         }.frame(width: 550, height: 340)
