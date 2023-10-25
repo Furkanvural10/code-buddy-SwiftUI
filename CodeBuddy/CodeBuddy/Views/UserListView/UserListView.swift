@@ -31,9 +31,6 @@ struct UserListView: View {
                 .buttonStyle(.plain)
                 .sheet(isPresented: $isFilterViewPresented) {
                     UserFilterView(isPresented: $isFilterViewPresented)
-                        
-                        
-
                 }
             }
 

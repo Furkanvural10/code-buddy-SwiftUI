@@ -64,16 +64,13 @@ struct UserFilterView: View {
             Divider()
                 .foregroundColor(Color.black.opacity(0))
             HStack(alignment: .bottom) {
-                    
                 Button(action: {
-                    // Butona tıklandığında çalışacak kod
                 }) {
                     Text("Apply")
                 }
                 .buttonStyle(.borderedProminent)
                 
                 Button(action: {
-                    // Butona tıklandığında çalışacak kod
                     isPresented.toggle()
                 }) {
                     Text("Cancel")
