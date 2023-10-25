@@ -60,6 +60,27 @@ struct UserFilterView: View {
                 }
             }
             
+            Spacer()
+            Divider()
+                .foregroundColor(Color.black.opacity(0))
+            HStack(alignment: .bottom) {
+                    
+                Button(action: {
+                    // Butona tıklandığında çalışacak kod
+                }) {
+                    Text("Apply")
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button(action: {
+                    // Butona tıklandığında çalışacak kod
+                    isPresented.toggle()
+                }) {
+                    Text("Cancel")
+                }
+                .buttonStyle(.automatic)
+            }
+            
             
         }.frame(width: 550, height: 340)
     }
