@@ -1,43 +1,40 @@
 
 import SwiftUI
+import MapKit
 
 struct MapView: View {
+    
+    @State private var selectedMapType = MKMapType.standard
+    
     var body: some View {
-        
-        
         ZStack(alignment: .centerLastTextBaseline) {
-            Map()
+            Map(mapType: $selectedMapType)
+            
             
             Rectangle()
-                .fill(.black.opacity(0.31))
+                .fill(Color.black.opacity(0.4))
                 .frame(width: 300, height: 70)
                 .cornerRadius(10)
                 .overlay(
                     HStack(alignment: .center, spacing: 40) {
-                        Image(systemName: "plus.circle.fill") // İlk simge için sisteminizdeki simgenin ismini ekleyin
-                            .font(.system(size: 24))
-                            .foregroundColor(.white)
-                        Image(systemName: "star.fill") // İkinci simge için sisteminizdeki simgenin ismini ekleyin
-                            .font(.system(size: 24))
-                            .foregroundColor(.yellow)
-                        Image(systemName: "square.stack.3d.up.fill") // Üçüncü simge için sisteminizdeki simgenin ismini ekleyin
+                        Image(systemName: "plus")
                             .font(.system(size: 24))
                             .foregroundColor(.green)
-                        Image(systemName: "location.fill") // Üçüncü simge için sisteminizdeki simgenin ismini ekleyin
+                        Image(systemName: "star.fill")
                             .font(.system(size: 24))
-                            .foregroundColor(.blue)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "square.stack.3d.up.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.orange)
+                            .onTapGesture {
+                                self.selectedMapType = .hybridFlyover
+                            }
+                        Image(systemName: "location.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(.white)
                     }
                 )
                 .padding(.bottom, 25)
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }
     }
 }
