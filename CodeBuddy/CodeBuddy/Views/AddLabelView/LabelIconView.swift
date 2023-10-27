@@ -6,24 +6,34 @@
 //
 
 import SwiftUI
+import MapKit
+
+class MapType: ObservableObject {
+    
+    @Published var mapType = MKMapType.standard
+    @Published var showTraffic = false
+}
 
 struct LabelIconView: View {
     
     @State private var showsIcon = false
+    @EnvironmentObject var mapType: MapType
+    @EnvironmentObject var showTraffic: MapType
+    
     
     var body: some View {
         HStack(alignment: .center, spacing: 40) {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 24))
-                .foregroundColor(.green)
+                .foregroundColor(.white)
             Image(systemName: "star.fill")
                 .font(.system(size: 24))
-                .foregroundColor(.yellow)
+                .foregroundColor(.white)
             Image(systemName: "square.stack.3d.up.fill")
                 .font(.system(size: 24))
-                .foregroundColor(.orange)
+                .foregroundColor(.white)
                 .onTapGesture {
-//                    self.selectedMapType = .satelliteFlyover
+
                     withAnimation {
                         showsIcon.toggle()
                     }
@@ -45,6 +55,11 @@ struct LabelIconView: View {
                                         .scaledToFill()
                                         .cornerRadius(10)
                                 }
+                                .onTapGesture {
+                                    
+                                    self.mapType.mapType = .standard
+                                    self.mapType.showTraffic = false
+                                }
                                 
                                 ZStack {
                                     Rectangle()
@@ -57,6 +72,10 @@ struct LabelIconView: View {
                                         .scaledToFill()
                                         .cornerRadius(10)
                                 }
+                                .onTapGesture {
+                                    self.mapType.mapType = .satellite
+                                    self.mapType.showTraffic = false
+                                }
                                 
                                 ZStack {
                                     Rectangle()
@@ -68,6 +87,10 @@ struct LabelIconView: View {
                                         .frame(width: 70, height: 70)
                                         .scaledToFill()
                                         .cornerRadius(10)
+                                }
+                                .onTapGesture {
+                                    self.mapType.mapType = .standard
+                                    self.mapType.showTraffic = true
                                 }
                             }
                             

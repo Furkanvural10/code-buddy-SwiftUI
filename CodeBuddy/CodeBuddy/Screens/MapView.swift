@@ -9,7 +9,8 @@ struct MapView: View {
     
     var body: some View {
         ZStack(alignment: .centerLastTextBaseline) {
-            Map(mapType: $selectedMapType)
+//            Map(mapType: $selectedMapType)
+            Map()
             AddLabelView()
         }
     }
@@ -18,6 +19,7 @@ struct MapView: View {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
+            .environmentObject(MapType())
     }
 }
 

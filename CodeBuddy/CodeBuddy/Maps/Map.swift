@@ -11,18 +11,20 @@ import SwiftUI
 
 struct Map: NSViewRepresentable {
     typealias NSViewType = MKMapView
-    @Binding var mapType: MKMapType
+    
+    @EnvironmentObject var mapType: MapType
 
     func makeNSView(context: Context) -> MKMapView {
         let map = MKMapView()
         map.showsUserLocation = true
         map.delegate = context.coordinator
-        map.mapType = mapType
+        map.mapType = .standard
         return map
     }
     
     func updateNSView(_ nsView: MKMapView, context: Context) {
-        nsView.mapType = mapType
+        nsView.mapType = mapType.mapType
+        nsView.showsTraffic = mapType.showTraffic
     }
     
     func makeCoordinator() -> MapViewCoordinator {

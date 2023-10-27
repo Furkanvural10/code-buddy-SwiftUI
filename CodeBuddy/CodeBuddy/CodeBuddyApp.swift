@@ -13,6 +13,7 @@ struct CodeBuddyApp: App {
         WindowGroup {
             HomeView()
                 .environmentObject(Settings())
+                .environmentObject(MapType())
                 .frame(minWidth: 1280 ,minHeight: 720)
         }
     }

@@ -10,7 +10,7 @@ import MapKit
 
 struct AddLabelView: View {
     
-    @State private var selectedMapType = MKMapType.standard
+//    @State private var selectedMapType = MKMapType.standard
     
     
     var body: some View {
