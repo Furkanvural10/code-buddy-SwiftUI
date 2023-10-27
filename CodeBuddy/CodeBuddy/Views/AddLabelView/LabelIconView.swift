@@ -19,7 +19,9 @@ struct LabelIconView: View {
     @State private var showsIcon = false
     @EnvironmentObject var mapType: MapType
     @EnvironmentObject var showTraffic: MapType
-    @State private var isHovered = false
+    @State private var isHoveredStandardMapStyle = false
+    @State private var isHoveredSatelliteMapStyle = false
+    @State private var isHoveredDriveMapStyle = false
 
     
     
@@ -47,8 +49,8 @@ struct LabelIconView: View {
                                 
                                 ZStack {
                                     Text("Standard")
-                                        .position(x: 36, y: -12)
-                                        .foregroundColor(isHovered ? Color.white.opacity(0.5) : Color.white.opacity(0))
+                                        .position(x: 38, y: -12)
+                                        .foregroundColor(isHoveredStandardMapStyle ? Color.white.opacity(0.7) : Color.white.opacity(0))
                                     Rectangle()
                                         .fill(Color.black.opacity(0.5))
                                         .frame(width: 80, height: 80)
@@ -61,17 +63,20 @@ struct LabelIconView: View {
                                     
                                 }
                                 .onHover { hovering in
-                                    self.isHovered = hovering
-                                    print(self.isHovered)
+                                    self.isHoveredStandardMapStyle = hovering
                                 }
                                 .onTapGesture {
                                     self.mapType.mapType = .standard
                                     self.mapType.showTraffic = false
+                                    
                                 }
                                 
                                 
                                 
                                 ZStack {
+                                    Text("Satellite")
+                                        .position(x: 38, y: -12)
+                                        .foregroundColor(isHoveredSatelliteMapStyle ? Color.white.opacity(0.7) : Color.white.opacity(0))
                                     Rectangle()
                                         .fill(Color.black.opacity(0.5))
                                         .frame(width: 80, height: 80)
@@ -82,12 +87,19 @@ struct LabelIconView: View {
                                         .scaledToFill()
                                         .cornerRadius(10)
                                 }
+                                .onHover { hovering in
+                                    self.isHoveredSatelliteMapStyle = hovering
+                                }
                                 .onTapGesture {
                                     self.mapType.mapType = .satellite
                                     self.mapType.showTraffic = false
+                                    
                                 }
                                 
                                 ZStack {
+                                    Text("Traffic")
+                                        .position(x: 38, y: -12)
+                                        .foregroundColor(isHoveredDriveMapStyle ? Color.white.opacity(0.7) : Color.white.opacity(0))
                                     Rectangle()
                                         .fill(Color.black.opacity(0.5))
                                         .frame(width: 80, height: 80)
@@ -98,9 +110,13 @@ struct LabelIconView: View {
                                         .scaledToFill()
                                         .cornerRadius(10)
                                 }
+                                .onHover { hovering in
+                                    self.isHoveredDriveMapStyle = hovering
+                                }
                                 .onTapGesture {
                                     self.mapType.mapType = .standard
                                     self.mapType.showTraffic = true
+                                    
                                 }
                             }
                             
