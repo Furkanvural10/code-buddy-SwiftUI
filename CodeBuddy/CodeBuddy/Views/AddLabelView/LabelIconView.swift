@@ -19,6 +19,8 @@ struct LabelIconView: View {
     @State private var showsIcon = false
     @EnvironmentObject var mapType: MapType
     @EnvironmentObject var showTraffic: MapType
+    @State private var isHovered = false
+
     
     
     var body: some View {
@@ -41,10 +43,12 @@ struct LabelIconView: View {
                 .overlay(
                     ZStack {
                         if self.showsIcon {
-                            
-                                
                             HStack(spacing: 10) {
+                                
                                 ZStack {
+                                    Text("Standard")
+                                        .position(x: 36, y: -12)
+                                        .foregroundColor(isHovered ? Color.white.opacity(0.5) : Color.white.opacity(0))
                                     Rectangle()
                                         .fill(Color.black.opacity(0.5))
                                         .frame(width: 80, height: 80)
@@ -54,12 +58,18 @@ struct LabelIconView: View {
                                         .frame(width: 70, height: 70)
                                         .scaledToFill()
                                         .cornerRadius(10)
+                                    
+                                }
+                                .onHover { hovering in
+                                    self.isHovered = hovering
+                                    print(self.isHovered)
                                 }
                                 .onTapGesture {
-                                    
                                     self.mapType.mapType = .standard
                                     self.mapType.showTraffic = false
                                 }
+                                
+                                
                                 
                                 ZStack {
                                     Rectangle()
