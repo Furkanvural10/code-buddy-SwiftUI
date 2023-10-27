@@ -23,7 +23,7 @@ struct LabelIconView: View {
                 .font(.system(size: 24))
                 .foregroundColor(.orange)
                 .onTapGesture {
-                    //                                self.selectedMapType = .hybridFlyover
+//                    self.selectedMapType = .satelliteFlyover
                     withAnimation {
                         showsIcon.toggle()
                     }
@@ -32,15 +32,23 @@ struct LabelIconView: View {
                     ZStack {
                         if self.showsIcon {
                             HStack {
-                                Rectangle()
-                                    .fill(.red)
+                                Image("standard")
+                                    .resizable()
                                     .frame(width: 50, height: 50)
-                                Rectangle()
-                                    .fill(.blue)
+                                    .scaledToFill()
+                                
+                                Image("satellite")
+                                    .resizable()
                                     .frame(width: 50, height: 50)
-                                Rectangle()
-                                    .fill(.green)
+                                    .scaledToFill()
+                                    
+                                Image("drive")
+                                    .resizable()
                                     .frame(width: 50, height: 50)
+                                    .scaledToFill()
+                                    
+                                
+                                    
                             }
                             .offset(x:-6, y: -70)
                             
