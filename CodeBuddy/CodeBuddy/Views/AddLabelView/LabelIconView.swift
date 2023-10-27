@@ -31,34 +31,58 @@ struct LabelIconView: View {
                 .overlay(
                     ZStack {
                         if self.showsIcon {
-                            HStack {
-                                Image("standard")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .scaledToFill()
+                            
                                 
-                                Image("satellite")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .scaledToFill()
-                                    
-                                Image("drive")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .scaledToFill()
-                                    
+                            HStack(spacing: 10) {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Color.black.opacity(0.5))
+                                        .frame(width: 80, height: 80)
+                                        .cornerRadius(10)
+                                    Image("standard")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .scaledToFill()
+                                        .cornerRadius(10)
+                                }
                                 
-                                    
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Color.black.opacity(0.5))
+                                        .frame(width: 80, height: 80)
+                                        .cornerRadius(10)
+                                    Image("satellite")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .scaledToFill()
+                                        .cornerRadius(10)
+                                }
+                                
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Color.black.opacity(0.5))
+                                        .frame(width: 80, height: 80)
+                                        .cornerRadius(10)
+                                    Image("drive")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .scaledToFill()
+                                        .cornerRadius(10)
+                                }
                             }
-                            .offset(x:-6, y: -70)
+                            
+                            .offset(x:-33, y: -80)
+                            
                             
                         }
                     }
+                        
                 )
             Image(systemName: "location.circle.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
         }
+        
     }
 }
 
