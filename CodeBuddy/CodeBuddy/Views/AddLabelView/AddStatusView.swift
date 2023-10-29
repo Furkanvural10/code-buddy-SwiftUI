@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AddStatusView: View {
     @State private var isPresented: Bool = true
-    @State private var isWorkingStatus: Bool = false
+    @State private var isNetworkingStatus: Bool = false
     @State private var isCollaborationStatus: Bool = false
     @State private var isBusyStatus: Bool = false
     @State private var onHoverForImage: Bool = false
+    @State private var onHoverForNetworkingStatus: Bool = false
+    @State private var onHoverForBusyStatus: Bool = false
     
     @State private var onHoverForCollaborationStatus: Bool = false
     @State private var nameText: String = ""
@@ -54,13 +56,16 @@ struct AddStatusView: View {
                     
                 HStack {
                     ZStack {
+                        // MARK: - Collaboration Status
                         Text("Collaboration")
-                            .font(.system(size: 11))
+                            .scaledToFill()
+                            .font(.system(size: 10))
                             .foregroundColor(onHoverForCollaborationStatus ? Color.gray : Color.white.opacity(0))
+                            
                             .offset(x: 0, y: -22)
-                        Toggle(isOn: $isWorkingStatus) {
+                        Toggle(isOn: $isCollaborationStatus) {
                             Image(systemName: "keyboard.chevron.compact.left.fill")
-                                .foregroundColor(isWorkingStatus ? Color.green : Color.gray)
+                                .foregroundColor(isCollaborationStatus ? Color.green : Color.gray)
                                 .font(.system(size: 20))
                         }
                     }
@@ -68,18 +73,49 @@ struct AddStatusView: View {
                         self.onHoverForCollaborationStatus = hovering
                     }
                     
-                    
-                    Toggle(isOn: $isCollaborationStatus) {
-                        Image(systemName: "cup.and.saucer.fill")
-                            .foregroundColor(isCollaborationStatus ? Color.brown : Color.gray)
-                            .font(.system(size: 20))
+                    ZStack {
+                        // MARK: - Networking Status
+                        Text("Networking")
+                            .font(.system(size: 11))
+                            .foregroundColor(onHoverForNetworkingStatus ? Color.gray : Color.white.opacity(0))
+                            .offset(x: 0, y: -22)
+                        Toggle(isOn: $isNetworkingStatus) {
+                            Image(systemName: "cup.and.saucer.fill")
+                                .foregroundColor(isNetworkingStatus ? Color.brown : Color.gray)
+                                .font(.system(size: 20))
+                        }
+                    }
+                    .onHover { hovering in
+                        self.onHoverForNetworkingStatus = hovering
                     }
                     
-                    Toggle(isOn: $isBusyStatus) {
-                        Image(systemName: "minus.circle.fill")
-                            .foregroundColor(isBusyStatus ? Color.red : Color.gray)
-                            .font(.system(size: 20))
+                    ZStack {
+                        Text("Busy")
+                            .font(.system(size: 11))
+                            .foregroundColor(onHoverForBusyStatus ? Color.gray : Color.white.opacity(0))
+                            .offset(x: 0, y: -22)
+                        Toggle(isOn: $isBusyStatus) {
+                            Image(systemName: "minus.circle.fill")
+                                .foregroundColor(isBusyStatus ? Color.red : Color.gray)
+                                .font(.system(size: 20))
+                        }
                     }
+                    .onHover { hovering in
+                        self.onHoverForBusyStatus = hovering
+                    }
+                    
+                    
+//                    Toggle(isOn: $isCollaborationStatus) {
+//                        Image(systemName: "cup.and.saucer.fill")
+//                            .foregroundColor(isCollaborationStatus ? Color.brown : Color.gray)
+//                            .font(.system(size: 20))
+//                    }
+//
+//                    Toggle(isOn: $isBusyStatus) {
+//                        Image(systemName: "minus.circle.fill")
+//                            .foregroundColor(isBusyStatus ? Color.red : Color.gray)
+//                            .font(.system(size: 20))
+//                    }
                 }
             }
             .padding(.trailing, 23)
