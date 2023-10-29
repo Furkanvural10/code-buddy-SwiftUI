@@ -11,7 +11,6 @@ struct NetworkingIconView: View {
     var body: some View {
         Image(systemName: "cup.and.saucer.fill")
             .foregroundColor(.gray.opacity(0.3))
-            
             .font(.system(size: 9))
     }
 }

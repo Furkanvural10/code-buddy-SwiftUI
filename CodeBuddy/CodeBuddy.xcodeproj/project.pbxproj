@@ -20,12 +20,13 @@
 		044705382AE714CE00AEE163 /* StatusIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705372AE714CE00AEE163 /* StatusIconView.swift */; };
 		0447053B2AE716AA00AEE163 /* CollaborationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447053A2AE716AA00AEE163 /* CollaborationIconView.swift */; };
 		0447053E2AE716EC00AEE163 /* NetworkingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447053D2AE716EC00AEE163 /* NetworkingIconView.swift */; };
-		044705412AE7172600AEE163 /* BussyIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705402AE7172600AEE163 /* BussyIconView.swift */; };
+		044705412AE7172600AEE163 /* BusyIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705402AE7172600AEE163 /* BusyIconView.swift */; };
 		044705672AE86BBB00AEE163 /* UserFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705662AE86BBB00AEE163 /* UserFilterView.swift */; };
 		044705692AE91FBD00AEE163 /* ProgrammingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705682AE91FBD00AEE163 /* ProgrammingLanguage.swift */; };
 		0447056B2AE92CA900AEE163 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447056A2AE92CA900AEE163 /* UserStatus.swift */; };
 		044705742AEBEEC300AEE163 /* AddLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705732AEBEEC300AEE163 /* AddLabelView.swift */; };
 		044705762AEBF16200AEE163 /* LabelIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705752AEBF16200AEE163 /* LabelIconView.swift */; };
+		044705782AEEDCDF00AEE163 /* AddStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705772AEEDCDF00AEE163 /* AddStatusView.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -45,12 +46,13 @@
 		044705372AE714CE00AEE163 /* StatusIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIconView.swift; sourceTree = "<group>"; };
 		0447053A2AE716AA00AEE163 /* CollaborationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationIconView.swift; sourceTree = "<group>"; };
 		0447053D2AE716EC00AEE163 /* NetworkingIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingIconView.swift; sourceTree = "<group>"; };
-		044705402AE7172600AEE163 /* BussyIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BussyIconView.swift; sourceTree = "<group>"; };
+		044705402AE7172600AEE163 /* BusyIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusyIconView.swift; sourceTree = "<group>"; };
 		044705662AE86BBB00AEE163 /* UserFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterView.swift; sourceTree = "<group>"; };
 		044705682AE91FBD00AEE163 /* ProgrammingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguage.swift; sourceTree = "<group>"; };
 		0447056A2AE92CA900AEE163 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		044705732AEBEEC300AEE163 /* AddLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabelView.swift; sourceTree = "<group>"; };
 		044705752AEBF16200AEE163 /* LabelIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelIconView.swift; sourceTree = "<group>"; };
+		044705772AEEDCDF00AEE163 /* AddStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatusView.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 		044705322AE710D500AEE163 /* StatusIcons */ = {
 			isa = PBXGroup;
 			children = (
-				0447053F2AE7171500AEE163 /* BussyIcon */,
+				0447053F2AE7171500AEE163 /* BusyIcon */,
 				0447053C2AE716D300AEE163 /* NetworkingIcon */,
 				044705392AE7166A00AEE163 /* CollaborationIcon */,
 				044705372AE714CE00AEE163 /* StatusIconView.swift */,
@@ -177,12 +179,12 @@
 			path = NetworkingIcon;
 			sourceTree = "<group>";
 		};
-		0447053F2AE7171500AEE163 /* BussyIcon */ = {
+		0447053F2AE7171500AEE163 /* BusyIcon */ = {
 			isa = PBXGroup;
 			children = (
-				044705402AE7172600AEE163 /* BussyIconView.swift */,
+				044705402AE7172600AEE163 /* BusyIconView.swift */,
 			);
-			path = BussyIcon;
+			path = BusyIcon;
 			sourceTree = "<group>";
 		};
 		044705422AE7197000AEE163 /* Models */ = {
@@ -214,6 +216,7 @@
 			children = (
 				044705732AEBEEC300AEE163 /* AddLabelView.swift */,
 				044705752AEBF16200AEE163 /* LabelIconView.swift */,
+				044705772AEEDCDF00AEE163 /* AddStatusView.swift */,
 			);
 			path = AddLabelView;
 			sourceTree = "<group>";
@@ -332,7 +335,7 @@
 				040954CF2AE320150045DC6F /* Map.swift in Sources */,
 				0447053E2AE716EC00AEE163 /* NetworkingIconView.swift in Sources */,
 				044705762AEBF16200AEE163 /* LabelIconView.swift in Sources */,
-				044705412AE7172600AEE163 /* BussyIconView.swift in Sources */,
+				044705412AE7172600AEE163 /* BusyIconView.swift in Sources */,
 				040954CA2AE31D310045DC6F /* SideBarView.swift in Sources */,
 				0447056B2AE92CA900AEE163 /* UserStatus.swift in Sources */,
 				040954CC2AE31D4A0045DC6F /* MapView.swift in Sources */,
@@ -341,6 +344,7 @@
 				0409550B2AE472470045DC6F /* UserListView.swift in Sources */,
 				040955082AE45E920045DC6F /* LocationManager.swift in Sources */,
 				0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */,
+				044705782AEEDCDF00AEE163 /* AddStatusView.swift in Sources */,
 				040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */,
 				040954D22AE327930045DC6F /* MapViewCoordinator.swift in Sources */,
 				0447053B2AE716AA00AEE163 /* CollaborationIconView.swift in Sources */,

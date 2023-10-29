@@ -10,9 +10,6 @@ import MapKit
 
 struct AddLabelView: View {
     
-//    @State private var selectedMapType = MKMapType.standard
-    
-    
     var body: some View {
         Rectangle()
             .fill(Color.black.opacity(0.4))

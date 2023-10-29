@@ -9,27 +9,33 @@ import SwiftUI
 import MapKit
 
 class MapType: ObservableObject {
-    
     @Published var mapType = MKMapType.standard
     @Published var showTraffic = false
 }
 
 struct LabelIconView: View {
     
-    @State private var showsIcon = false
+    @State private var showsIcon: Bool  = false
     @EnvironmentObject var mapType: MapType
     @EnvironmentObject var showTraffic: MapType
-    @State private var isHoveredStandardMapStyle = false
-    @State private var isHoveredSatelliteMapStyle = false
-    @State private var isHoveredDriveMapStyle = false
-
-    
+    @State private var isHoveredStandardMapStyle: Bool  = false
+    @State private var isHoveredSatelliteMapStyle: Bool  = false
+    @State private var isHoveredDriveMapStyle: Bool  = false
+    @State private var isPresented: Bool = false
     
     var body: some View {
         HStack(alignment: .center, spacing: 40) {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
+                .onTapGesture {
+                    isPresented.toggle()
+                }
+                .sheet(isPresented: $isPresented) {
+                    // MARK: - Adding User yourself
+                    AddStatusView()
+                    
+                }
             Image(systemName: "star.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
@@ -37,7 +43,6 @@ struct LabelIconView: View {
                 .font(.system(size: 24))
                 .foregroundColor(.white)
                 .onTapGesture {
-
                     withAnimation {
                         showsIcon.toggle()
                     }
@@ -47,6 +52,7 @@ struct LabelIconView: View {
                         if self.showsIcon {
                             HStack(spacing: 10) {
                                 
+                                // MARK: - Standard Map Style View
                                 ZStack {
                                     Text("Standard")
                                         .position(x: 38, y: -12)
@@ -60,7 +66,6 @@ struct LabelIconView: View {
                                         .frame(width: 70, height: 70)
                                         .scaledToFill()
                                         .cornerRadius(10)
-                                    
                                 }
                                 .onHover { hovering in
                                     self.isHoveredStandardMapStyle = hovering
@@ -68,11 +73,9 @@ struct LabelIconView: View {
                                 .onTapGesture {
                                     self.mapType.mapType = .standard
                                     self.mapType.showTraffic = false
-                                    
                                 }
                                 
-                                
-                                
+                                // MARK: - Satellite Map Style View
                                 ZStack {
                                     Text("Satellite")
                                         .position(x: 38, y: -12)
@@ -93,9 +96,9 @@ struct LabelIconView: View {
                                 .onTapGesture {
                                     self.mapType.mapType = .satellite
                                     self.mapType.showTraffic = false
-                                    
                                 }
                                 
+                                // MARK: - Traffic Map Style View
                                 ZStack {
                                     Text("Traffic")
                                         .position(x: 38, y: -12)
@@ -116,22 +119,16 @@ struct LabelIconView: View {
                                 .onTapGesture {
                                     self.mapType.mapType = .standard
                                     self.mapType.showTraffic = true
-                                    
                                 }
                             }
-                            
                             .offset(x:-33, y: -80)
-                            
-                            
                         }
                     }
-                        
                 )
             Image(systemName: "location.circle.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
         }
-        
     }
 }
 
