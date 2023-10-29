@@ -21,40 +21,56 @@ struct AddStatusView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Image(systemName: "square.and.arrow.down")
-                .frame(width: 70, height: 70)
-                .background(.white)
-                .clipShape(Circle())
-                
-            
-            VStack(spacing: 10) {
-                TextField("Username", text: $nameText)
-                TextField("Title", text: $titleText)
-            }
-            
-            
-            
             HStack {
-                Toggle(isOn: $isWorkingStatus) {
-                    Image(systemName: "keyboard.chevron.compact.left.fill")
-                        .foregroundColor(isWorkingStatus ? Color.green : Color.gray)
+                ZStack {
+                    Image(systemName: "square.and.arrow.down")
                         .font(.system(size: 20))
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(Circle())
+                        .padding()
+                        .onHover { hovering in
+                            self.onHoverForImage = hovering
+                        }
+                    Text("Add your image")
+                        .font(.system(size: 10))
+                        .foregroundColor(onHoverForImage ? Color.gray : Color.white.opacity(0))
+                        .offset(x: 0, y: -44)
                     
                 }
-                Toggle(isOn: $isCollaborationStatus) {
-                    Image(systemName: "cup.and.saucer.fill")
-                        .foregroundColor(isCollaborationStatus ? Color.brown : Color.gray)
-                        .font(.system(size: 20))
+                    
+                VStack {
+                    TextField("Username", text: $nameText)
+                        
+                    TextField("Title", text: $titleText)
                 }
-                Toggle(isOn: $isBusyStatus) {
-                    Image(systemName: "minus.circle.fill")
-                        .foregroundColor(isBusyStatus ? Color.red : Color.gray)
-                        .font(.system(size: 20))
-                }
+                .padding(.trailing, 10)
+//                .padding(.leading, 1)
             }
             
+//
+//
+//            HStack {
+//                Toggle(isOn: $isWorkingStatus) {
+//                    Image(systemName: "keyboard.chevron.compact.left.fill")
+//                        .foregroundColor(isWorkingStatus ? Color.green : Color.gray)
+//                        .font(.system(size: 20))
+//
+//                }
+//                Toggle(isOn: $isCollaborationStatus) {
+//                    Image(systemName: "cup.and.saucer.fill")
+//                        .foregroundColor(isCollaborationStatus ? Color.brown : Color.gray)
+//                        .font(.system(size: 20))
+//                }
+//                Toggle(isOn: $isBusyStatus) {
+//                    Image(systemName: "minus.circle.fill")
+//                        .foregroundColor(isBusyStatus ? Color.red : Color.gray)
+//                        .font(.system(size: 20))
+//                }
+//            }
+            
         }
-        .frame(width: 370, height: 250)
+        .frame(width: 370, height: 160)
         
         
     }
