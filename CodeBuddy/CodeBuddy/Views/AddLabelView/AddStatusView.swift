@@ -13,6 +13,8 @@ struct AddStatusView: View {
     @State private var isCollaborationStatus: Bool = false
     @State private var isBusyStatus: Bool = false
     @State private var onHoverForImage: Bool = false
+    
+    @State private var onHoverForCollaborationStatus: Bool = false
     @State private var nameText: String = ""
     @State private var titleText: String = ""
     
@@ -36,16 +38,13 @@ struct AddStatusView: View {
                         .font(.system(size: 10))
                         .foregroundColor(onHoverForImage ? Color.gray : Color.white.opacity(0))
                         .offset(x: 0, y: -44)
-                    
                 }
                     
                 VStack {
                     TextField("Username", text: $nameText)
-                        
                     TextField("Backend Developer", text: $titleText)
                 }
                 .padding(.trailing, 10)
-//                .padding(.leading, 1)
             }
             
             HStack {
@@ -54,17 +53,28 @@ struct AddStatusView: View {
                     .foregroundColor(.white.opacity(0.5))
                     
                 HStack {
-                    Toggle(isOn: $isWorkingStatus) {
-                        Image(systemName: "keyboard.chevron.compact.left.fill")
-                            .foregroundColor(isWorkingStatus ? Color.green : Color.gray)
-                            .font(.system(size: 20))
-
+                    ZStack {
+                        Text("Collaboration")
+                            .font(.system(size: 11))
+                            .foregroundColor(onHoverForCollaborationStatus ? Color.gray : Color.white.opacity(0))
+                            .offset(x: 0, y: -22)
+                        Toggle(isOn: $isWorkingStatus) {
+                            Image(systemName: "keyboard.chevron.compact.left.fill")
+                                .foregroundColor(isWorkingStatus ? Color.green : Color.gray)
+                                .font(.system(size: 20))
+                        }
                     }
+                    .onHover { hovering in
+                        self.onHoverForCollaborationStatus = hovering
+                    }
+                    
+                    
                     Toggle(isOn: $isCollaborationStatus) {
                         Image(systemName: "cup.and.saucer.fill")
                             .foregroundColor(isCollaborationStatus ? Color.brown : Color.gray)
                             .font(.system(size: 20))
                     }
+                    
                     Toggle(isOn: $isBusyStatus) {
                         Image(systemName: "minus.circle.fill")
                             .foregroundColor(isBusyStatus ? Color.red : Color.gray)
@@ -72,18 +82,11 @@ struct AddStatusView: View {
                     }
                 }
             }
-            
             .padding(.trailing, 23)
             
-//
-//
-
-            
         }
-        .frame(width: 370, height: 200)
-        
-        
-        
+        .frame(width: 400, height: 220)
+ 
     }
 }
 
