@@ -53,29 +53,35 @@ struct AddStatusView: View {
                 Text("Select Mood:")
                     .font(.system(size: 12))
                     .foregroundColor(.white.opacity(0.5))
-                    
+                
                 HStack {
                     ZStack {
                         // MARK: - Collaboration Status
                         Text("Collaboration")
                             .scaledToFill()
-                            .font(.system(size: 10))
+                            .font(.system(size: 11))
                             .foregroundColor(onHoverForCollaborationStatus ? Color.gray : Color.white.opacity(0))
-                            
                             .offset(x: 0, y: -22)
                         Toggle(isOn: $isCollaborationStatus) {
                             Image(systemName: "keyboard.chevron.compact.left.fill")
                                 .foregroundColor(isCollaborationStatus ? Color.green : Color.gray)
                                 .font(.system(size: 20))
                         }
+                        
+                        
+                        
                     }
+                    
                     .onHover { hovering in
                         self.onHoverForCollaborationStatus = hovering
                     }
                     
+                    
+                    
                     ZStack {
                         // MARK: - Networking Status
                         Text("Networking")
+                            .scaledToFill()
                             .font(.system(size: 11))
                             .foregroundColor(onHoverForNetworkingStatus ? Color.gray : Color.white.opacity(0))
                             .offset(x: 0, y: -22)
@@ -83,14 +89,18 @@ struct AddStatusView: View {
                             Image(systemName: "cup.and.saucer.fill")
                                 .foregroundColor(isNetworkingStatus ? Color.brown : Color.gray)
                                 .font(.system(size: 20))
+                                
                         }
+                        
                     }
                     .onHover { hovering in
                         self.onHoverForNetworkingStatus = hovering
                     }
                     
+                    // MARK: - Busy Status
                     ZStack {
                         Text("Busy")
+                            .scaledToFill()
                             .font(.system(size: 11))
                             .foregroundColor(onHoverForBusyStatus ? Color.gray : Color.white.opacity(0))
                             .offset(x: 0, y: -22)
@@ -99,26 +109,34 @@ struct AddStatusView: View {
                                 .foregroundColor(isBusyStatus ? Color.red : Color.gray)
                                 .font(.system(size: 20))
                         }
+                        .onTapGesture {
+                            print("Tıklandı Busy")
+                            isNetworkingStatus = false
+                            isCollaborationStatus = false
+                        }
                     }
                     .onHover { hovering in
                         self.onHoverForBusyStatus = hovering
                     }
-                    
-                    
-//                    Toggle(isOn: $isCollaborationStatus) {
-//                        Image(systemName: "cup.and.saucer.fill")
-//                            .foregroundColor(isCollaborationStatus ? Color.brown : Color.gray)
-//                            .font(.system(size: 20))
-//                    }
-//
-//                    Toggle(isOn: $isBusyStatus) {
-//                        Image(systemName: "minus.circle.fill")
-//                            .foregroundColor(isBusyStatus ? Color.red : Color.gray)
-//                            .font(.system(size: 20))
-//                    }
                 }
             }
-            .padding(.trailing, 23)
+            .padding([.trailing, .leading], 23)
+            Divider()
+                .background(.white.opacity(0))
+            HStack(spacing: 10) {
+                Button("Cancel") {
+                    
+                }
+                .buttonStyle(.plain)
+                Button("Save") {
+                    
+                }
+    //            .foregroundColor() -> Check user choose status and textfield fill if not color is not blue!!
+                .buttonStyle(.borderedProminent)
+            }
+            .padding()
+            
+        
             
         }
         .frame(width: 400, height: 220)
