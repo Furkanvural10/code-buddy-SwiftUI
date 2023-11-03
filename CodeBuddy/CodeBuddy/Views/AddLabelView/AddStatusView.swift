@@ -208,6 +208,7 @@ struct AddStatusView: View {
     func openImagePicker() {
         let openPanel = NSOpenPanel()
         openPanel.allowedFileTypes = ["jpg", "jpeg", "png"]
+//        openPanel.allowedContentTypes = [.png, .jpeg]
         openPanel.allowsMultipleSelection = false
         
         openPanel.begin { response in

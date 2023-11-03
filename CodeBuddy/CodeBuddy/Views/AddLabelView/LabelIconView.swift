@@ -11,6 +11,7 @@ import MapKit
 class MapType: ObservableObject {
     @Published var mapType = MKMapType.standard
     @Published var showTraffic = false
+    @Published var trackingMode = MKUserTrackingMode.none
 }
 
 struct LabelIconView: View {
@@ -23,7 +24,12 @@ struct LabelIconView: View {
     @State private var isHoveredDriveMapStyle: Bool  = false
     @State private var isPresented: Bool = false
     
+    @EnvironmentObject var userTrackingMode: MapType
+    let mapDelegate = MapViewCoordinator()
+    
+    
     var body: some View {
+        
         HStack(alignment: .center, spacing: 40) {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 24))
@@ -129,6 +135,9 @@ struct LabelIconView: View {
             Image(systemName: "location.circle.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
+                .onTapGesture {
+                    mapType.trackingMode = .follow
+                }
         }
     }
 }
