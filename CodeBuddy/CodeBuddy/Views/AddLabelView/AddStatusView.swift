@@ -157,6 +157,7 @@ struct AddStatusView: View {
                         .fill(nameTextFieldFill ? .blue : .gray.opacity(0))
                         .frame(width: 60, height: 20)
                     Text("Save")
+                        .foregroundColor(nameTextFieldFill ? .white : .gray.opacity(0.5))
                 }
                 .onTapGesture {
                     print("Save islemi basarılı")
@@ -248,7 +249,7 @@ struct MyBusyCustomToggleStyle: ToggleStyle {
                 .frame(width: 54, height: 30, alignment: .center)
                 .overlay(
                     Circle()
-                        .foregroundColor(configuration.isOn ? .white : .white)
+                        .foregroundColor(configuration.isOn ? .red : .gray)
                         .padding(.all, 3)
                         .overlay(
                             Image(systemName: configuration.isOn ? "minus.circle" : "minus.circle")
@@ -256,7 +257,7 @@ struct MyBusyCustomToggleStyle: ToggleStyle {
                                 .aspectRatio(contentMode: .fit)
                                 .font(Font.title.weight(.light))
                                 .frame(width: 20, height: 20, alignment: .center)
-                                .foregroundColor(configuration.isOn ? .red : .gray)
+                                .foregroundColor(configuration.isOn ? .black.opacity(0.8) : .white)
                         )
                         .offset(x: configuration.isOn ? 11 : -11, y: 0)
                         .animation(Animation.linear(duration: 0.1))
