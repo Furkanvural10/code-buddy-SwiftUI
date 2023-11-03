@@ -47,6 +47,17 @@ struct AddStatusView: View {
                 
                 VStack {
                     TextField("Username", text: $nameText)
+                        .onChange(of: nameText) { newValue in
+                            if newValue.count < 3 {
+                                nameTextFieldFill = false
+                            } else {
+                                if titleText.count > 3 {
+                                    nameTextFieldFill = true
+                                } else {
+                                    nameTextFieldFill = false
+                                }
+                            }
+                        }
                     
                     TextField("Backend Developer", text: $titleText)
                         .onChange(of: titleText) { newValue in
@@ -56,6 +67,8 @@ struct AddStatusView: View {
                                 } else {
                                     nameTextFieldFill = false
                                 }
+                            } else {
+                                nameTextFieldFill = false
                             }
                         }
                 }
