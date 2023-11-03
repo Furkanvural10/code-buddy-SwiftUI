@@ -21,7 +21,9 @@ struct AddStatusView: View {
     @State private var nameText: String = ""
     @State private var titleText: String = ""
     
-    
+    // MARK: - Image
+    @State private var selectedImage: NSImage?
+    @State private var isImagePickerPresented = false
     
     
     var body: some View {
@@ -29,20 +31,49 @@ struct AddStatusView: View {
             Spacer()
             Spacer()
             HStack {
-                ZStack {
-                    Image(systemName: "square.and.arrow.down")
-                        .font(.system(size: 20))
-                        .frame(width: 60, height: 60)
-                        .background(.orange)
-                        .clipShape(Circle())
-                        .padding()
-                        .onHover { hovering in
-                            self.onHoverForImage = hovering
-                        }
-                    Text("Add your image")
-                        .font(.system(size: 10))
-                        .foregroundColor(onHoverForImage ? Color.gray : Color.white.opacity(0))
-                        .offset(x: 0, y: 40)
+                if let image = selectedImage {
+                    ZStack {
+                        
+                        Image(nsImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .font(.system(size: 20))
+                            .frame(width: 60, height: 60)
+                            .background(.orange)
+                            .clipShape(Circle())
+                            .padding()
+                            .onHover { hovering in
+                                self.onHoverForImage = hovering
+                            }
+                        Text("Change your image")
+                            .font(.system(size: 10))
+                            .foregroundColor(onHoverForImage ? Color.gray : Color.white.opacity(0))
+                            .offset(x: 0, y: 40)
+                    }
+                    .onTapGesture {
+                        openImagePicker()
+                    }
+                } else {
+                    
+                    ZStack {
+                        
+                        Image(systemName: "square.and.arrow.down")
+                            .font(.system(size: 20))
+                            .frame(width: 60, height: 60)
+                            .background(.orange)
+                            .clipShape(Circle())
+                            .padding()
+                            .onHover { hovering in
+                                self.onHoverForImage = hovering
+                            }
+                        Text("Add your image")
+                            .font(.system(size: 10))
+                            .foregroundColor(onHoverForImage ? Color.gray : Color.white.opacity(0))
+                            .offset(x: 0, y: 40)
+                    }
+                    .onTapGesture {
+                        openImagePicker()
+                    }
                 }
                 
                 VStack {
@@ -171,7 +202,19 @@ struct AddStatusView: View {
         }
         .frame(width: 470, height: 250)
         
+        
     }
+    func openImagePicker() {
+            let openPanel = NSOpenPanel()
+            openPanel.allowedFileTypes = ["jpg", "jpeg", "png"]
+            openPanel.allowsMultipleSelection = false
+
+            openPanel.begin { response in
+                if response == .OK, let url = openPanel.url, let image = NSImage(contentsOf: url) {
+                    selectedImage = image
+                }
+            }
+        }
 }
 
 struct AddStatusView_Previews: PreviewProvider {
@@ -267,3 +310,4 @@ struct MyBusyCustomToggleStyle: ToggleStyle {
         }
     }
 }
+
