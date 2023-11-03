@@ -15,6 +15,7 @@ struct AddStatusView: View {
     @State private var onHoverForImage: Bool = false
     @State private var onHoverForNetworkingStatus: Bool = false
     @State private var onHoverForBusyStatus: Bool = false
+    @State private var nameTextFieldFill: Bool = false
     
     @State private var onHoverForCollaborationStatus: Bool = false
     @State private var nameText: String = ""
@@ -46,7 +47,18 @@ struct AddStatusView: View {
                     
                 VStack {
                     TextField("Username", text: $nameText)
+                        
                     TextField("Backend Developer", text: $titleText)
+                        .onChange(of: titleText) { newValue in
+                            if nameText.count > 3 {
+                                if newValue.count > 3 {
+                                    nameTextFieldFill = true
+                                } else {
+                                    nameTextFieldFill = false
+                                }
+                            }
+                            
+                        }
                 }
             
                 .padding(.trailing, 10)
@@ -65,23 +77,14 @@ struct AddStatusView: View {
                             .font(.system(size: 11))
                             .foregroundColor(onHoverForCollaborationStatus ? Color.gray : Color.white.opacity(0))
                             .offset(x: 0, y: 32)
-//                        Toggle(isOn: $isCollaborationStatus) {
-//                            Image(systemName: "keyboard.chevron.compact.left.fill")
-//                                .foregroundColor(isCollaborationStatus ? Color.green : Color.gray)
-//                                .font(.system(size: 20))
-//                        }
+                        
                         Toggle("", isOn: $isCollaborationStatus)
                             .toggleStyle(MyCollaborationCustomToggleStyle())
                     }
                     .onHover { hovering in
                         self.onHoverForCollaborationStatus = hovering
                     }
-                    
-                    
-                        
-                    
-                    
-                    
+    
                     ZStack {
                         // MARK: - Networking Status
                         Text("Networking")
@@ -91,13 +94,6 @@ struct AddStatusView: View {
                             .offset(x: 0, y: 32)
                         Toggle("", isOn: $isNetworkingStatus)
                             .toggleStyle(MyNetworkingCustomToggleStyle())
-//                        Toggle(isOn: $isNetworkingStatus) {
-//                            Image(systemName: "cup.and.saucer.fill")
-//                                .foregroundColor(isNetworkingStatus ? Color.brown : Color.gray)
-//                                .font(.system(size: 20))
-//
-//                        }
-                        
                     }
                     .onHover { hovering in
                         self.onHoverForNetworkingStatus = hovering
@@ -112,16 +108,6 @@ struct AddStatusView: View {
                             .offset(x: 0, y: 32)
                         Toggle("", isOn: $isBusyStatus)
                             .toggleStyle(MyBusyCustomToggleStyle())
-//                        Toggle(isOn: $isBusyStatus) {
-//                            Image(systemName: "minus.circle.fill")
-//                                .foregroundColor(isBusyStatus ? Color.red : Color.gray)
-//                                .font(.system(size: 20))
-//                        }
-//                        .onTapGesture {
-//                            print("Tıklandı Busy")
-//                            isNetworkingStatus = false
-//                            isCollaborationStatus = false
-//                        }
                     }
                     .onHover { hovering in
                         self.onHoverForBusyStatus = hovering
@@ -134,14 +120,21 @@ struct AddStatusView: View {
                 .padding(.top, 10)
             HStack(spacing: 10) {
                 Button("Cancel") {
-                    
+                    print("Cancel islemi")
                 }
-                .buttonStyle(.plain)
-                Button("Save") {
-                    
+                .buttonStyle(.borderless)
+                ZStack(alignment: .center) {
+                    Capsule()
+                        .fill(nameTextFieldFill ? .blue : .gray)
+                        .frame(width: 60, height: 20)
+                    Text("Save")
                 }
-    //            .foregroundColor() -> Check user choose status and textfield fill if not color is not blue!!
-                .buttonStyle(.borderedProminent)
+                .onTapGesture {
+                    print("Save islemi basarılı")
+                }
+                    
+                
+                
             }
             .padding()
             Spacer()
