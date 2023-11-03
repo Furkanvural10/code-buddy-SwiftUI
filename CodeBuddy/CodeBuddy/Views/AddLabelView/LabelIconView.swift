@@ -33,7 +33,8 @@ struct LabelIconView: View {
                 }
                 .sheet(isPresented: $isPresented) {
                     // MARK: - Adding User yourself
-                    AddStatusView()
+                    AddStatusView(isPresented: $isPresented)
+                    
                     
                 }
             Image(systemName: "star.fill")

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddStatusView: View {
-    @State private var isPresented: Bool = true
+    @Binding var isPresented: Bool
     @State private var isNetworkingStatus: Bool = false
     @State private var isCollaborationStatus: Bool = false
     @State private var isBusyStatus: Bool = false
@@ -48,7 +48,7 @@ struct AddStatusView: View {
                         Text("Change your image")
                             .font(.system(size: 10))
                             .foregroundColor(onHoverForImage ? Color.gray : Color.white.opacity(0))
-                            .offset(x: 0, y: 40)
+                            .offset(x: 5, y: 40)
                     }
                     .onTapGesture {
                         openImagePicker()
@@ -181,6 +181,7 @@ struct AddStatusView: View {
             HStack(spacing: 10) {
                 Button("Cancel") {
                     print("Cancel islemi")
+                    isPresented.toggle()
                 }
                 .buttonStyle(.borderless)
                 ZStack(alignment: .center) {
@@ -205,23 +206,23 @@ struct AddStatusView: View {
         
     }
     func openImagePicker() {
-            let openPanel = NSOpenPanel()
-            openPanel.allowedFileTypes = ["jpg", "jpeg", "png"]
-            openPanel.allowsMultipleSelection = false
-
-            openPanel.begin { response in
-                if response == .OK, let url = openPanel.url, let image = NSImage(contentsOf: url) {
-                    selectedImage = image
-                }
+        let openPanel = NSOpenPanel()
+        openPanel.allowedFileTypes = ["jpg", "jpeg", "png"]
+        openPanel.allowsMultipleSelection = false
+        
+        openPanel.begin { response in
+            if response == .OK, let url = openPanel.url, let image = NSImage(contentsOf: url) {
+                selectedImage = image
             }
         }
-}
-
-struct AddStatusView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddStatusView()
     }
 }
+
+//struct AddStatusView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddStatusView()
+//    }
+//}
 
 
 struct MyNetworkingCustomToggleStyle: ToggleStyle {
