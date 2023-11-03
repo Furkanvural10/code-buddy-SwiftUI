@@ -24,7 +24,8 @@ struct AddStatusView: View {
     
     
     var body: some View {
-        VStack(alignment: .trailing) {
+        VStack(alignment: .center) {
+            Spacer()
             Spacer()
             HStack {
                 ZStack {
@@ -50,21 +51,26 @@ struct AddStatusView: View {
             
                 .padding(.trailing, 10)
             }
-            
+            Divider()
+                .background(.white.opacity(0))
+            Text("Select your status: ")
+                .font(.system(size: 12))
+                .foregroundColor(.white.opacity(0.6))
             HStack {
+
                     ZStack {
                         // MARK: - Collaboration Status
-                        Text("")
+                        Text("Collaboration")
                             .scaledToFill()
                             .font(.system(size: 11))
                             .foregroundColor(onHoverForCollaborationStatus ? Color.gray : Color.white.opacity(0))
-                            .offset(x: 40, y: -28)
+                            .offset(x: 0, y: 32)
 //                        Toggle(isOn: $isCollaborationStatus) {
 //                            Image(systemName: "keyboard.chevron.compact.left.fill")
 //                                .foregroundColor(isCollaborationStatus ? Color.green : Color.gray)
 //                                .font(.system(size: 20))
 //                        }
-                        Toggle("Collaboration", isOn: $isCollaborationStatus)
+                        Toggle("", isOn: $isCollaborationStatus)
                             .toggleStyle(MyCollaborationCustomToggleStyle())
                     }
                     .onHover { hovering in
@@ -78,12 +84,12 @@ struct AddStatusView: View {
                     
                     ZStack {
                         // MARK: - Networking Status
-                        Text("")
+                        Text("Networking")
                             .scaledToFill()
                             .font(.system(size: 11))
                             .foregroundColor(onHoverForNetworkingStatus ? Color.gray : Color.white.opacity(0))
-                            .offset(x: 0, y: -22)
-                        Toggle("Networking", isOn: $isNetworkingStatus)
+                            .offset(x: 0, y: 32)
+                        Toggle("", isOn: $isNetworkingStatus)
                             .toggleStyle(MyNetworkingCustomToggleStyle())
 //                        Toggle(isOn: $isNetworkingStatus) {
 //                            Image(systemName: "cup.and.saucer.fill")
@@ -99,12 +105,12 @@ struct AddStatusView: View {
                     
                     // MARK: - Busy Status
                     ZStack {
-                        Text("")
+                        Text("Busy")
                             .scaledToFill()
                             .font(.system(size: 11))
                             .foregroundColor(onHoverForBusyStatus ? Color.gray : Color.white.opacity(0))
-                            .offset(x: 0, y: -22)
-                        Toggle("Busy", isOn: $isBusyStatus)
+                            .offset(x: 0, y: 32)
+                        Toggle("", isOn: $isBusyStatus)
                             .toggleStyle(MyBusyCustomToggleStyle())
 //                        Toggle(isOn: $isBusyStatus) {
 //                            Image(systemName: "minus.circle.fill")
@@ -139,10 +145,11 @@ struct AddStatusView: View {
             }
             .padding()
             Spacer()
+            Spacer()
         
             
         }
-        .frame(width: 460, height: 210)
+        .frame(width: 470, height: 250)
  
     }
 }
@@ -157,7 +164,7 @@ struct AddStatusView_Previews: PreviewProvider {
 struct MyNetworkingCustomToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
             VStack {
-                configuration.label
+                configuration.label.font(.system(size: 12)).foregroundColor(Color.gray)
                 Rectangle()
                     .foregroundColor(configuration.isOn ? .brown : .gray)
                     .frame(width: 54, height: 30, alignment: .center)
@@ -184,7 +191,7 @@ struct MyNetworkingCustomToggleStyle: ToggleStyle {
 struct MyCollaborationCustomToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
             VStack {
-                configuration.label
+                configuration.label.font(.system(size: 12)).foregroundColor(Color.gray)
                 Rectangle()
                     .foregroundColor(configuration.isOn ? .green : .gray)
                     .frame(width: 54, height: 30, alignment: .center)
@@ -212,7 +219,7 @@ struct MyCollaborationCustomToggleStyle: ToggleStyle {
 struct MyBusyCustomToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
             VStack {
-                configuration.label
+                configuration.label.font(.system(size: 12)).foregroundColor(Color.gray)
                 Rectangle()
                     .foregroundColor(configuration.isOn ? .red : .gray)
                     .frame(width: 54, height: 30, alignment: .center)
