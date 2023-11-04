@@ -39,7 +39,7 @@ struct AddStatusView: View {
                             .scaledToFill()
                             .font(.system(size: 20))
                             .frame(width: 60, height: 60)
-                            .background(.orange)
+//                            .background(.orange)
                             .clipShape(Circle())
                             .padding()
                             .onHover { hovering in
@@ -60,7 +60,7 @@ struct AddStatusView: View {
                         Image(systemName: "square.and.arrow.down")
                             .font(.system(size: 20))
                             .frame(width: 60, height: 60)
-                            .background(.orange)
+                            .background(.gray)
                             .clipShape(Circle())
                             .padding()
                             .onHover { hovering in
