@@ -43,7 +43,7 @@ struct LabelIconView: View {
                     
                     
                 }
-            Image(systemName: "star.fill")
+            Image(systemName: "heart.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
             Image(systemName: "square.stack.3d.up.fill")
