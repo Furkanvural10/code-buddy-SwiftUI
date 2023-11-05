@@ -28,6 +28,7 @@
 		044705762AEBF16200AEE163 /* LabelIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705752AEBF16200AEE163 /* LabelIconView.swift */; };
 		044705782AEEDCDF00AEE163 /* AddStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044705772AEEDCDF00AEE163 /* AddStatusView.swift */; };
 		0447057B2AF7B7BE00AEE163 /* FavoritePlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447057A2AF7B7BE00AEE163 /* FavoritePlacesView.swift */; };
+		0447057E2AF7BDBB00AEE163 /* AllPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447057D2AF7BDBB00AEE163 /* AllPlacesView.swift */; };
 		045EDCC82ADB2C6200E1FF1F /* CodeBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */; };
 		045EDCCC2ADB2C6300E1FF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */; };
 		045EDCCF2ADB2C6300E1FF1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045EDCCE2ADB2C6300E1FF1F /* Preview Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		044705752AEBF16200AEE163 /* LabelIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelIconView.swift; sourceTree = "<group>"; };
 		044705772AEEDCDF00AEE163 /* AddStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatusView.swift; sourceTree = "<group>"; };
 		0447057A2AF7B7BE00AEE163 /* FavoritePlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesView.swift; sourceTree = "<group>"; };
+		0447057D2AF7BDBB00AEE163 /* AllPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlacesView.swift; sourceTree = "<group>"; };
 		045EDCC42ADB2C6200E1FF1F /* CodeBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EDCC72ADB2C6200E1FF1F /* CodeBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuddyApp.swift; sourceTree = "<group>"; };
 		045EDCCB2ADB2C6300E1FF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		040955092AE472350045DC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0447057C2AF7BDAC00AEE163 /* AllPlacesView */,
 				044705792AF7B79A00AEE163 /* FavoritePlacesView */,
 				044705722AEBEE8F00AEE163 /* AddLabelView */,
 				044705712AEBEE8100AEE163 /* AnnotationView */,
@@ -230,6 +233,14 @@
 				0447057A2AF7B7BE00AEE163 /* FavoritePlacesView.swift */,
 			);
 			path = FavoritePlacesView;
+			sourceTree = "<group>";
+		};
+		0447057C2AF7BDAC00AEE163 /* AllPlacesView */ = {
+			isa = PBXGroup;
+			children = (
+				0447057D2AF7BDBB00AEE163 /* AllPlacesView.swift */,
+			);
+			path = AllPlacesView;
 			sourceTree = "<group>";
 		};
 		045EDCBB2ADB2C6200E1FF1F = {
@@ -356,6 +367,7 @@
 				0447057B2AF7B7BE00AEE163 /* FavoritePlacesView.swift in Sources */,
 				040955082AE45E920045DC6F /* LocationManager.swift in Sources */,
 				0409550D2AE472C80045DC6F /* UserLabelView.swift in Sources */,
+				0447057E2AF7BDBB00AEE163 /* AllPlacesView.swift in Sources */,
 				044705782AEEDCDF00AEE163 /* AddStatusView.swift in Sources */,
 				040954C82AE31C6E0045DC6F /* HomeView.swift in Sources */,
 				040954D22AE327930045DC6F /* MapViewCoordinator.swift in Sources */,

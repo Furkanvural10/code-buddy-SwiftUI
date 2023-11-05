@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct FavoritePlacesView: View {
+    
+    @State private var isSelectedFavoritePlaces: Bool = true
+    
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
@@ -15,9 +19,12 @@ struct FavoritePlacesView: View {
                     .foregroundColor(.white)
                     .font(.system(size: 14))
                 Spacer()
-                Image(systemName: "heart.fill")
+                Image(systemName: isSelectedFavoritePlaces ? "heart.fill" : "heart")
                     .padding(.trailing, 14)
-                    .foregroundColor(.red)
+                    .foregroundColor( isSelectedFavoritePlaces ? .red : .white)
+                    .onTapGesture {
+                        isSelectedFavoritePlaces.toggle()
+                    }
             }
             .padding(.leading, 10)
             Text("Etiler/İstanbul")

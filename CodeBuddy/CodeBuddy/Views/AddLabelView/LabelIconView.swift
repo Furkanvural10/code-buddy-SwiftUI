@@ -17,7 +17,7 @@ class MapType: ObservableObject {
 struct LabelIconView: View {
     
     @State private var selectedSegment = 0
-    let segments = ["Favorite", "General",]
+    let segments = ["Favorite", "All",]
     
     
     @State private var showsIcon: Bool  = false
@@ -62,32 +62,59 @@ struct LabelIconView: View {
                 .overlay(
                     VStack(alignment: .center) {
                         if self.showsBestPlace {
-                            List {
-                                HStack {
-                                    Picker("", selection: $selectedSegment) {
-                                        ForEach(0..<segments.count, id: \.self) { index in
-                                            Text(segments[index])
-                                        }
-                                    }.pickerStyle(SegmentedPickerStyle())
-                                    
-                                }
-                                ForEach(1...10, id: \.self) { _ in
-                                    ZStack(alignment: .leading) {
+                            if self.selectedSegment == 0 {
+                                List {
+                                    HStack {
+                                        Picker("", selection: $selectedSegment) {
+                                            ForEach(0..<segments.count, id: \.self) { index in
+                                                Text(segments[index])
+                                            }
+                                        }.pickerStyle(SegmentedPickerStyle())
                                         
-                                        Rectangle()
-                                            .fill(Color.gray.opacity(0.09))
-                                            .frame(width: 220, height: 50)
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                                            .padding(.all, 4)
-                                        
-                                        HStack() {
-                                            FavoritePlacesView()
+                                    }
+                                    ForEach(1...10, id: \.self) { _ in
+                                        ZStack(alignment: .leading) {
+                                            
+                                            Rectangle()
+                                                .fill(Color.gray.opacity(0.09))
+                                                .frame(width: 220, height: 50)
+                                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                                .padding(.all, 4)
+                                            
+                                            HStack() {
+                                                FavoritePlacesView()
+                                            }
                                         }
                                     }
+                                    
                                 }
-                                
+                            } else {
+                                List {
+                                    HStack {
+                                        Picker("", selection: $selectedSegment) {
+                                            ForEach(0..<segments.count, id: \.self) { index in
+                                                Text(segments[index])
+                                            }
+                                        }.pickerStyle(SegmentedPickerStyle())
+                                        
+                                    }
+                                    ForEach(1...10, id: \.self) { _ in
+                                        ZStack(alignment: .leading) {
+                                            
+                                            Rectangle()
+                                                .fill(Color.gray.opacity(0.09))
+                                                .frame(width: 223, height: 50)
+                                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                                .padding(.all, 4)
+                                            
+                                            HStack() {
+                                                AllPlacesView()
+                                            }
+                                        }
+                                    }
+                                    
+                                }
                             }
-                            
                         }
                     }
                         .cornerRadius(5)
