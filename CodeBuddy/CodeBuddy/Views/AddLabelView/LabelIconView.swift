@@ -16,7 +16,13 @@ class MapType: ObservableObject {
 
 struct LabelIconView: View {
     
+    @State private var selectedSegment = 0
+    let segments = ["Favorite", "General",]
+    
+    
     @State private var showsIcon: Bool  = false
+    @State private var showsBestPlace: Bool  = false
+    
     @EnvironmentObject var mapType: MapType
     @EnvironmentObject var showTraffic: MapType
     @State private var isHoveredStandardMapStyle: Bool  = false
@@ -35,17 +41,58 @@ struct LabelIconView: View {
                 .font(.system(size: 24))
                 .foregroundColor(.white)
                 .onTapGesture {
-                    isPresented.toggle()
+                        isPresented.toggle()
                 }
                 .sheet(isPresented: $isPresented) {
-                    // MARK: - Adding User yourself
                     AddStatusView(isPresented: $isPresented)
-                    
-                    
                 }
+            
+            // MARK: - Show Best Places
             Image(systemName: "heart.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)
+                .onTapGesture {
+                    withAnimation {
+                        showsBestPlace.toggle()
+                        showsIcon = false
+                    }
+                }
+                .overlay(
+                    VStack {
+                        if self.showsBestPlace {
+                            List {
+                                Picker("", selection: $selectedSegment) {
+                                    ForEach(0..<segments.count, id: \.self) { index in
+                                        Text(segments[index])
+                                    }
+                                }.pickerStyle(SegmentedPickerStyle())
+                                ForEach(1...10, id: \.self) { _ in
+                                    ZStack(alignment: .leading) {
+                                        
+                                        Rectangle()
+                                            .fill(Color.gray.opacity(0.09))
+                                            .frame(width: 195, height: 50)
+                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                                            .padding(.all, 4)
+                                        
+                                        HStack() {
+                                            UserImageView()
+                                            TitleSubtitleView()
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            
+                        }
+                    }
+                        .cornerRadius(5)
+                        .frame(width: 280, height: 485)
+                        .offset(x:33, y: -290)
+                )
+                
+            
+            // MARK: - Show Map Style
             Image(systemName: "square.stack.3d.up.fill")
                 .font(.system(size: 24))
                 .foregroundColor(.white)

@@ -201,6 +201,7 @@ struct AddStatusView: View {
         .frame(width: 470, height: 250)
         
         
+        
     }
     func openImagePicker() {
         let openPanel = NSOpenPanel()
