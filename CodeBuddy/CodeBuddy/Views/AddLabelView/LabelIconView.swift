@@ -41,7 +41,9 @@ struct LabelIconView: View {
                 .font(.system(size: 24))
                 .foregroundColor(.white)
                 .onTapGesture {
-                        isPresented.toggle()
+                    showsBestPlace = false
+                    showsIcon = false
+                    isPresented.toggle()
                 }
                 .sheet(isPresented: $isPresented) {
                     AddStatusView(isPresented: $isPresented)
@@ -50,7 +52,7 @@ struct LabelIconView: View {
             // MARK: - Show Best Places
             Image(systemName: "heart.fill")
                 .font(.system(size: 24))
-                .foregroundColor(.white)
+                .foregroundColor( showsBestPlace ? .red : .white)
                 .onTapGesture {
                     withAnimation {
                         showsBestPlace.toggle()
@@ -58,26 +60,28 @@ struct LabelIconView: View {
                     }
                 }
                 .overlay(
-                    VStack {
+                    VStack(alignment: .center) {
                         if self.showsBestPlace {
                             List {
-                                Picker("", selection: $selectedSegment) {
-                                    ForEach(0..<segments.count, id: \.self) { index in
-                                        Text(segments[index])
-                                    }
-                                }.pickerStyle(SegmentedPickerStyle())
+                                HStack {
+                                    Picker("", selection: $selectedSegment) {
+                                        ForEach(0..<segments.count, id: \.self) { index in
+                                            Text(segments[index])
+                                        }
+                                    }.pickerStyle(SegmentedPickerStyle())
+                                    
+                                }
                                 ForEach(1...10, id: \.self) { _ in
                                     ZStack(alignment: .leading) {
                                         
                                         Rectangle()
                                             .fill(Color.gray.opacity(0.09))
-                                            .frame(width: 195, height: 50)
+                                            .frame(width: 220, height: 50)
                                             .clipShape(RoundedRectangle(cornerRadius: 10))
                                             .padding(.all, 4)
                                         
                                         HStack() {
-                                            UserImageView()
-                                            TitleSubtitleView()
+                                            FavoritePlacesView()
                                         }
                                     }
                                 }
@@ -98,6 +102,8 @@ struct LabelIconView: View {
                 .foregroundColor(.white)
                 .onTapGesture {
                     withAnimation {
+                        showsBestPlace = false
+                        isPresented = false
                         showsIcon.toggle()
                     }
                 }
