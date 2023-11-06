@@ -12,8 +12,6 @@ import SwiftUI
 struct Map: NSViewRepresentable {
     typealias NSViewType = MKMapView
     
-    
-    
     @EnvironmentObject var mapType: MapType
     @EnvironmentObject var trackingMode: MapType
 

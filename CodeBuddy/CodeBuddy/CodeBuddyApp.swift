@@ -14,7 +14,6 @@ struct CodeBuddyApp: App {
             HomeView()
                 .environmentObject(Settings())
                 .environmentObject(MapType())
-//                .environmentObject(MapType())
                 .frame(minWidth: 1280 ,minHeight: 720)
         }
     }

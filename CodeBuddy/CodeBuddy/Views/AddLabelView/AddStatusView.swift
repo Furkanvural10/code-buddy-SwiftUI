@@ -87,7 +87,7 @@ struct AddStatusView: View {
                             }
                         }
                     
-                    TextField("Backend Developer", text: $titleText)
+                    TextField("eg: Backend Developer", text: $titleText)
                         .onChange(of: titleText) { newValue in
                             if nameText.count > 3 {
                                 if newValue.count > 3 {
