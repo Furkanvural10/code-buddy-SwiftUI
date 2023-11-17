@@ -14,6 +14,8 @@ class LocationManager: NSObject, ObservableObject {
     private var locationManager = CLLocationManager()
     @Published var location: CLLocation?
     @Published var region: MKCoordinateRegion = MKCoordinateRegion()
+    @Published private(set) var isUserLocationVisible = true // Default olarak true
+
     
     override init() {
         super.init()
@@ -35,4 +37,8 @@ extension LocationManager: CLLocationManagerDelegate {
             self?.region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         }
     }
+    
+    func disableUserLocation() {
+            isUserLocationVisible = false
+        }
 }

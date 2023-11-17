@@ -11,6 +11,7 @@ struct MapView: View {
         ZStack(alignment: .centerLastTextBaseline) {
 //            Map(mapType: $selectedMapType)
             Map()
+            
             AddLabelView()
         }
     }

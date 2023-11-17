@@ -120,8 +120,7 @@ struct LabelIconView: View {
                         .cornerRadius(5)
                         .frame(width: 280, height: 485)
                         .offset(x:33, y: -290)
-                )
-                
+            )
             
             // MARK: - Show Map Style
             Image(systemName: "square.stack.3d.up.fill")
