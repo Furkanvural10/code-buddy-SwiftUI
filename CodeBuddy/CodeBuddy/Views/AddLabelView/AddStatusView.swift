@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct AddStatusView: View {
     @Binding var isPresented: Bool
@@ -20,6 +21,12 @@ struct AddStatusView: View {
     @State private var onHoverForCollaborationStatus: Bool = false
     @State private var nameText: String = ""
     @State private var titleText: String = ""
+    @State private var selectedStatus = ""
+    
+    @EnvironmentObject var locationManager: LocationManager  // LocationManager'ı çekiyoruz
+    @State private var mapAnnotation: MKPointAnnotation?
+
+
     
     // MARK: - Image
     @State private var selectedImage: NSImage?
@@ -108,7 +115,6 @@ struct AddStatusView: View {
                 .font(.system(size: 12))
                 .foregroundColor(.white.opacity(0.6))
             HStack {
-                
                 ZStack {
                     // MARK: - Collaboration Status
                     Text("Collaboration")
@@ -123,6 +129,7 @@ struct AddStatusView: View {
                             if newValue {
                                 isNetworkingStatus = false
                                 isBusyStatus = false
+                                selectedStatus = "Collaboration"
                             }
                         }
                 }
@@ -143,6 +150,7 @@ struct AddStatusView: View {
                             if newValue {
                                 isCollaborationStatus = false
                                 isBusyStatus = false
+                                selectedStatus = "Networking"
                             }
                         }
                 }
@@ -163,6 +171,7 @@ struct AddStatusView: View {
                             if newValue {
                                 isCollaborationStatus = false
                                 isNetworkingStatus = false
+                                selectedStatus = "Busy"
                             }
                         }
                 }
@@ -189,9 +198,32 @@ struct AddStatusView: View {
                         .foregroundColor(nameTextFieldFill ? .white : .gray.opacity(0.5))
                 }
                 .onTapGesture {
-                    print("Save islemi basarılı")
+                    print("Info: \(self.nameText) , \(self.titleText) \(self.selectedStatus)")
+                    if let userLocation = locationManager.location {
+                            let newAnnotation = MKPointAnnotation()
+                            newAnnotation.coordinate = userLocation.coordinate
+                            newAnnotation.title = "Kullanıcının Konumu"
+                            // İstersek başka özellikler de ekleyebiliriz, mesela subtitle
+                            newAnnotation.subtitle = "Ek bilgi"
+                            print("BAŞARIYLA EKLENDİ")
+                        locationManager.disableUserLocation()
+                        mapAnnotation = newAnnotation
+//                        mapAnnotation.addAnnotation(newAnnotation)
+
+
+                            // Haritaya eklenen annotation'ı temizle ve yeni annotation'ı ekle
+                            // (İstersek var olan annotation'ları tutarak ekleyebiliriz)
+                        
+//                            mapView.removeAnnotations(mapView.annotations)
+//                            mapView.addAnnotation(newAnnotation)
+                        }
                 }
+                
+               
+                
+                
             }
+            
             .padding()
             Spacer()
             Spacer()

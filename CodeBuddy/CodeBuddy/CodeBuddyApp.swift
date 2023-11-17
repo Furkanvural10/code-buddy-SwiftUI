@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct CodeBuddyApp: App {
+    
+    @StateObject private var locationManager = LocationManager()
+
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(locationManager)
                 .environmentObject(Settings())
                 .environmentObject(MapType())
                 .frame(minWidth: 1280 ,minHeight: 720)
